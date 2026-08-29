@@ -29,9 +29,14 @@ export function Manifesto() {
           <p className="mt-8 max-w-[36em] text-[16px] leading-[1.7] text-ink/60 md:text-[17px]">
             {MANIFESTO.body}
           </p>
-          <ButtonLink href="#craft" variant="ghost" className="mt-8">
-            The making →
-          </ButtonLink>
+          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-[13px] tracking-[0.02em]">
+            <ButtonLink href="/collection" variant="ghost">
+              Ready to buy →
+            </ButtonLink>
+            <ButtonLink href="/#atelier" variant="ghost">
+              Custom order →
+            </ButtonLink>
+          </div>
         </div>
       </div>
     </section>

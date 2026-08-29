@@ -20,15 +20,15 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: "The Alpha Room — Alpha Furniture Mart",
-    template: "%s — Alpha Furniture Mart",
+    default: "Curated by Alpha",
+    template: "%s — Curated by Alpha",
   },
   description:
-    "One box. A whole room. Oak furniture that arrives, opens, and becomes a home.",
+    "Furnishing your luxury. Oak and walnut pieces, curated in Thrippunithura, Ernakulam.",
   openGraph: {
-    title: "The Alpha Room — Alpha Furniture Mart",
+    title: "Curated by Alpha",
     description:
-      "One box. A whole room. Oak furniture that arrives, opens, and becomes a home.",
+      "Furnishing your luxury. Oak and walnut pieces, curated in Thrippunithura, Ernakulam.",
     images: [{ url: "/og.jpg", width: 1600, height: 900 }],
   },
 };

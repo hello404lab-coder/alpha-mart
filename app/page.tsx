@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Atelier } from "@/components/atelier";
 import { Collection } from "@/components/collection";
 import { Craft } from "@/components/craft";
@@ -19,7 +20,9 @@ export default function Home() {
         <Specs />
         <ChairStage />
         <Collection />
-        <Atelier />
+        <Suspense>
+          <Atelier />
+        </Suspense>
       </main>
       <SiteFooter />
     </>

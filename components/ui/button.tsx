@@ -7,6 +7,8 @@ const variants = {
     "bg-cream text-ink hover:bg-river hover:text-cream focus-visible:ring-offset-void",
   ghost:
     "bg-transparent text-ink/70 hover:text-river px-0 py-0 rounded-none",
+  outline:
+    "border border-ink/15 bg-transparent text-ink hover:border-ink hover:bg-ink hover:text-cream focus-visible:ring-offset-cream",
 } as const;
 
 type Variant = keyof typeof variants;

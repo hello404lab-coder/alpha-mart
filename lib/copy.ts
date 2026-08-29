@@ -1,9 +1,8 @@
 export const NAV = [
-  { href: "#the-room", label: "The Room" },
-  { href: "#craft", label: "Craft" },
-  { href: "#chair", label: "The Chair" },
-  { href: "#collection", label: "Collection" },
-  { href: "#atelier", label: "Atelier" },
+  { href: "/#the-room", label: "The Room" },
+  { href: "/#chair", label: "The Chair" },
+  { href: "/collection", label: "Catalog" },
+  { href: "/#atelier", label: "Atelier" },
 ] as const;
 
 export type SequenceBeat = {

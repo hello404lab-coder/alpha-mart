@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { BrandMark } from "../brand-mark";
 import { FRAME_COUNT } from "@/lib/frames";
 
 type Props = {
@@ -28,9 +29,7 @@ export function SequenceLoader({
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-display text-6xl leading-none tracking-[-0.05em] text-ink/90">
-            α
-          </p>
+          <BrandMark className="h-16 w-auto" />
           <p className="mt-8 text-[11px] font-medium uppercase tracking-[0.22em] text-ink/40">
             Preparing the room
           </p>

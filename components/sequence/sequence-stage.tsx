@@ -57,10 +57,10 @@ export function SequenceStage() {
         />
         <div className="absolute left-6 top-[22%] max-w-[26rem] shadow-type md:left-[6%]">
           <p className="font-display text-[clamp(4.5rem,12vw,9.25rem)] leading-[0.82] tracking-[-0.05em] text-ink/90">
-            alpha
+            Alpha
           </p>
           <p className="mt-2 text-right text-[11px] font-medium uppercase tracking-[0.22em] text-ink/40">
-            furniture mart
+            curated by alpha
           </p>
           <p className="mt-8 max-w-[16rem] text-[15px] leading-relaxed text-ink/60">
             One box. Oak, linen, and late morning light.

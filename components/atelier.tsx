@@ -1,7 +1,11 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { ATELIER } from "@/lib/copy";
+import { BRAND } from "@/lib/brand";
+import { getEnquireList } from "@/lib/enquire";
+import { getProduct } from "@/lib/products";
 import { Button } from "./ui/button";
 
 const field =
@@ -9,6 +13,12 @@ const field =
 
 export function Atelier() {
   const [sent, setSent] = useState(false);
+  const params = useSearchParams();
+  const product = getProduct(params.get("product") ?? "");
+  const finish = params.get("finish");
+  const defaultMessage = product
+    ? `I would like to enquire about the ${product.name}${finish ? ` in ${finish}` : ""}.`
+    : "";
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -17,11 +27,18 @@ export function Atelier() {
     const email = String(data.get("email") ?? "");
     const city = String(data.get("city") ?? "");
     const message = String(data.get("message") ?? "");
-    const subject = encodeURIComponent("Enquire — The Alpha Room");
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nCity: ${city}\n\n${message}`,
+    const list = getEnquireList()
+      .map((slug) => getProduct(slug)?.name)
+      .filter(Boolean);
+    const listLine =
+      list.length > 0 ? `\n\nOn my list: ${list.join(", ")}` : "";
+    const subject = encodeURIComponent(
+      product ? `Enquire — ${product.name}` : `Enquire — ${BRAND.name}`,
     );
-    window.location.href = `mailto:atelier@alphafurnituremart.com?subject=${subject}&body=${body}`;
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nCity: ${city}\n\n${message}${listLine}`,
+    );
+    window.location.href = `mailto:${BRAND.email}?subject=${subject}&body=${body}`;
     setSent(true);
   };
 
@@ -39,6 +56,20 @@ export function Atelier() {
           <p className="mt-8 max-w-[32em] text-[16px] leading-[1.7] text-ink/60">
             {ATELIER.body}
           </p>
+          <p className="mt-6 max-w-[22em] text-[13px] leading-relaxed text-ink/45">
+            {BRAND.address}
+          </p>
+          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-ink/50">
+            <a href={BRAND.maps} target="_blank" rel="noreferrer" className="hover:text-river">
+              Maps →
+            </a>
+            <a href={BRAND.instagram} target="_blank" rel="noreferrer" className="hover:text-river">
+              {BRAND.instagramHandle}
+            </a>
+            <a href={`mailto:${BRAND.email}`} className="hover:text-river">
+              {BRAND.email}
+            </a>
+          </div>
         </div>
         <div className="lg:col-span-6 lg:col-start-7">
           {sent ? (
@@ -84,6 +115,7 @@ export function Atelier() {
                   required
                   rows={4}
                   placeholder="The room, the length, the light"
+                  defaultValue={defaultMessage}
                   className={`${field} resize-none`}
                 />
               </label>
