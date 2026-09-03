@@ -1,3 +1,5 @@
+import { HERO_CHAIR } from "./copy";
+
 export type ProductCategory = "seating" | "sleep" | "storage" | "objects";
 
 export type ProductImage = {
@@ -22,14 +24,16 @@ export type Product = {
   price: number;
   spec: string;
   description: string;
+  blurb: string;
   chips: string[];
+  badge?: string;
+  rating?: number;
   finishes?: ProductFinish[];
   images: ProductImage[];
   dimensions: string;
   timber: string;
   finish: string;
   origin: string;
-  sequenceHref?: string;
 };
 
 export const CATEGORIES: { id: ProductCategory | "all"; label: string }[] = [
@@ -50,7 +54,11 @@ export const PRODUCTS: Product[] = [
     spec: "Walnut frame · hand-woven cane",
     description:
       "A low lounge in solid walnut, with a cane back and seat that you can see through. Through-bolts, not glue, hold the arms. Built to be sat in, not explained.",
+    blurb:
+      "Low walnut lounge with a cane back and seat. Through-bolts, not glue, hold the arms.",
     chips: ["handcrafted", "walnut"],
+    badge: "handcrafted",
+    rating: 4.8,
     finishes: [
       { id: "walnut", label: "Walnut", hex: "#6C4830" },
       { id: "oak", label: "Oak", hex: "#C4A574" },
@@ -58,22 +66,12 @@ export const PRODUCTS: Product[] = [
     ],
     images: [
       {
-        src: "/sequence/chair/ezgif-frame-001.jpg",
+        src: HERO_CHAIR,
         alt: "Cane Lounge, three-quarter view, assembled",
         contain: true,
       },
       {
-        src: "/sequence/chair/ezgif-frame-020.jpg",
-        alt: "Cane Lounge, slightly turned",
-        contain: true,
-      },
-      {
-        src: "/sequence/chair/ezgif-frame-040.jpg",
-        alt: "Cane Lounge, front three-quarter",
-        contain: true,
-      },
-      {
-        src: "/sequence/chair/ezgif-frame-150.jpg",
+        src: "/stills/joinery.jpg",
         alt: "Cane Lounge, exploded joinery",
         contain: true,
         label: "Anatomy",
@@ -83,7 +81,6 @@ export const PRODUCTS: Product[] = [
     timber: "Solid walnut",
     finish: "Natural oil",
     origin: "Made to the room",
-    sequenceHref: "/#chair",
   },
   {
     slug: "oak-bed",
@@ -94,7 +91,11 @@ export const PRODUCTS: Product[] = [
     spec: "Low platform · quiet steel feet",
     description:
       "A low oak platform, overbuilt on purpose. The first piece the room remembers. Slats, frame, and a headboard that holds the wall without shouting.",
+    blurb:
+      "A low oak platform, overbuilt on purpose. The first piece the room remembers.",
     chips: ["oak", "atelier"],
+    badge: "popular",
+    rating: 5,
     finishes: [
       { id: "oak", label: "Oak", hex: "#C4A574" },
       { id: "walnut", label: "Walnut", hex: "#6C4830" },
@@ -102,17 +103,17 @@ export const PRODUCTS: Product[] = [
     ],
     images: [
       {
-        src: "/sequence/river-table/ezgif-frame-300.jpg",
+        src: "/stills/room-dressed.jpg",
         alt: "Oak Bed in the assembled Alpha room",
         position: "52% 80%",
       },
       {
-        src: "/sequence/river-table/ezgif-frame-140.jpg",
+        src: "/stills/room-bed.jpg",
         alt: "Oak Bed, made, before the room is dressed",
         position: "50% 70%",
       },
       {
-        src: "/sequence/river-table/ezgif-frame-180.jpg",
+        src: "/stills/room-dresser.jpg",
         alt: "Oak Bed with dresser and nightstand",
         position: "55% 72%",
       },
@@ -131,20 +132,24 @@ export const PRODUCTS: Product[] = [
     spec: "Oak frame · linen seat",
     description:
       "A quiet armchair for the edge of the bed. Oak arms, a linen hold, a throw if the morning is cold. Companion to the Cane Lounge, not a copy of it.",
+    blurb:
+      "A quiet armchair for the edge of the bed. Oak arms, a linen hold.",
     chips: ["oak", "linen"],
+    badge: "premium",
+    rating: 4.9,
     images: [
       {
-        src: "/sequence/river-table/ezgif-frame-270.jpg",
+        src: "/stills/room-lounge.jpg",
         alt: "Linen Lounge beside the oak bed",
         position: "8% 72%",
       },
       {
-        src: "/sequence/river-table/ezgif-frame-240.jpg",
+        src: "/stills/room-lounge-2.jpg",
         alt: "Linen Lounge in the dressed room",
         position: "16% 62%",
       },
       {
-        src: "/sequence/river-table/ezgif-frame-300.jpg",
+        src: "/stills/room-dressed.jpg",
         alt: "Linen Lounge in the finished Alpha room",
         position: "12% 70%",
       },
@@ -163,15 +168,16 @@ export const PRODUCTS: Product[] = [
     spec: "Four drawers · solid front",
     description:
       "Four drawers, solid oak fronts, quiet hardware. It takes the wall beside the bed and does not ask for attention.",
+    blurb: "Four drawers, solid oak fronts, quiet hardware.",
     chips: ["oak", "bespoke"],
     images: [
       {
-        src: "/sequence/river-table/ezgif-frame-180.jpg",
+        src: "/stills/room-dresser.jpg",
         alt: "Oak Dresser to the left of the bed",
         position: "18% 58%",
       },
       {
-        src: "/sequence/river-table/ezgif-frame-160.jpg",
+        src: "/stills/room-160.jpg",
         alt: "Oak Dresser arriving in the room",
         position: "16% 52%",
       },
@@ -190,15 +196,16 @@ export const PRODUCTS: Product[] = [
     spec: "Single drawer · lamp ready",
     description:
       "A small oak cube with one drawer. Made as a pair, sold as one, lived with as two.",
+    blurb: "A small oak cube with one drawer. Made as a pair.",
     chips: ["oak"],
     images: [
       {
-        src: "/sequence/river-table/ezgif-frame-140.jpg",
+        src: "/stills/room-bed.jpg",
         alt: "Nightstand and lamp beside the oak bed",
         position: "28% 62%",
       },
       {
-        src: "/sequence/river-table/ezgif-frame-180.jpg",
+        src: "/stills/room-dresser.jpg",
         alt: "Nightstand in the dressed room",
         position: "72% 58%",
       },
@@ -217,15 +224,16 @@ export const PRODUCTS: Product[] = [
     spec: "Oak boards · quiet steel",
     description:
       "Two boards, light brackets, a place for books and a plant. Sold as a pair.",
+    blurb: "Two boards, light brackets. Sold as a pair.",
     chips: ["oak"],
     images: [
       {
-        src: "/sequence/river-table/ezgif-frame-180.jpg",
+        src: "/stills/room-dresser.jpg",
         alt: "Oak wall shelves above the dresser",
         position: "16% 22%",
       },
       {
-        src: "/sequence/river-table/ezgif-frame-200.jpg",
+        src: "/stills/room-200.jpg",
         alt: "Oak shelves with objects",
         position: "18% 20%",
       },
@@ -244,15 +252,16 @@ export const PRODUCTS: Product[] = [
     spec: "Round glass · leather hang",
     description:
       "A round mirror on a leather strap. It hangs on the axis of the bed and does one job.",
+    blurb: "A round mirror on a leather strap. One job.",
     chips: ["atelier"],
     images: [
       {
-        src: "/sequence/river-table/ezgif-frame-300.jpg",
+        src: "/stills/room-dressed.jpg",
         alt: "Disc Mirror above the oak bed",
         position: "50% 18%",
       },
       {
-        src: "/sequence/river-table/ezgif-frame-200.jpg",
+        src: "/stills/room-200.jpg",
         alt: "Disc Mirror with prints",
         position: "50% 16%",
       },

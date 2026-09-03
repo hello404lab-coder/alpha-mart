@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --cream: #f7f3ec;
-  --sand: #efe8dc;
-  --plaster: #f0e6df;
-  --ink: #1b1712;
-  --void: #161310;
-  --paper: #fbf8f2;
+  --paper: #f5f7f2;
+  --cream: #f5f7f2;
+  --sand: #eceee8;
+  --plaster: #f5f7f2;
+  --ink: #242422;
+  --void: #151515;
+  --well: #efefea;
+  --sage: #8e8e82;
+  --mute: #6b6b64;
   --river: #1a9ba8;
   --river-deep: #3d8a90;
   --ember: #b5502f;
@@ -14,12 +17,15 @@
 }
 
 @theme inline {
+  --color-paper: var(--paper);
   --color-cream: var(--cream);
   --color-sand: var(--sand);
   --color-plaster: var(--plaster);
   --color-ink: var(--ink);
   --color-void: var(--void);
-  --color-paper: var(--paper);
+  --color-well: var(--well);
+  --color-sage: var(--sage);
+  --color-mute: var(--mute);
   --color-river: var(--river);
   --color-river-deep: var(--river-deep);
   --color-ember: var(--ember);
@@ -27,49 +33,44 @@
   --font-sans: var(--font-geist-sans);
   --font-display: var(--font-fraunces);
   --font-mono: var(--font-geist-mono);
-  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html {
-  background: var(--plaster);
+  background: var(--paper);
   color: var(--ink);
-  scroll-padding-top: 5.5rem;
+  scroll-padding-top: 1.5rem;
   overflow-x: clip;
 }
 
 section[id] {
-  scroll-margin-top: 4.5rem;
+  scroll-margin-top: 1.25rem;
 }
 
 body {
-  background: var(--cream);
+  background: var(--paper);
   color: var(--ink);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   min-height: 100%;
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--river) 28%, transparent);
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
   color: var(--ink);
 }
 
 .font-display {
   font-family: var(--font-fraunces), "Times New Roman", serif;
   font-optical-sizing: auto;
-  font-variation-settings: "SOFT" 46, "WONK" 0.35;
-}
-
-.shadow-type {
-  text-shadow: 0 1px 14px rgb(27 23 18 / 0.16);
+  font-variation-settings: "SOFT" 6, "WONK" 0;
 }
 
 @utility page-wrap {
   margin-inline: auto;
-  width: min(1120px, calc(100% - 2.5rem));
+  width: min(1180px, calc(100% - 2.5rem));
 }
 
 @media (min-width: 768px) {
   .page-wrap {
-    width: min(1120px, calc(100% - 4rem));
+    width: min(1180px, calc(100% - 4.5rem));
   }
 }

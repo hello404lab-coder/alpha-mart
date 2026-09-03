@@ -14,7 +14,7 @@ export default function CollectionPage() {
   return (
     <>
       <SiteNav solid />
-      <main className="bg-cream pt-28 pb-24 md:pt-32 md:pb-32">
+      <main className="bg-paper pb-24 pt-10 md:pb-32 md:pt-12">
         <div className="page-wrap">
           <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-ink/40">
             Catalog

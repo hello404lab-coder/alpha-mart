@@ -24,7 +24,7 @@ export function CatalogGrid() {
               onClick={() => setCategory(item.id)}
               className={`text-[13px] tracking-[0.06em] transition-colors ${
                 active
-                  ? "text-ink border-b border-river pb-4 -mb-px"
+                  ? "text-ink border-b border-ink pb-4 -mb-px"
                   : "text-ink/40 hover:text-ink/70 pb-4 -mb-px"
               }`}
             >

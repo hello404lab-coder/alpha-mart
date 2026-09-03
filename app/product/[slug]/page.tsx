@@ -45,7 +45,7 @@ export default async function ProductPage({
     <>
       <SiteNav solid />
       <main className="bg-[#FAFAF8]">
-        <div className="page-wrap grid gap-12 pt-28 pb-20 lg:grid-cols-12 lg:gap-16 lg:pt-32 lg:pb-28">
+        <div className="page-wrap grid gap-12 pt-10 pb-20 lg:grid-cols-12 lg:gap-16 lg:pt-12 lg:pb-28">
           <div className="lg:col-span-7">
             <ProductGallery images={product.images} />
           </div>
@@ -69,7 +69,7 @@ export default async function ProductPage({
               ))}
             </div>
             <p className="mt-16 text-[13px] text-ink/40">
-              <Link href="/collection" className="hover:text-river">
+              <Link href="/collection" className="hover:text-ink">
                 Catalog
               </Link>
               <span className="mx-2">/</span>

@@ -31,8 +31,14 @@ export function ProductTile({ product }: { product: Product }) {
             alt={hero.alt}
             width={1600}
             height={900}
-            className="aspect-square w-full object-cover transition-transform duration-700 ease-[var(--ease-out-quint)] group-hover:scale-[1.03]"
-            style={{ objectPosition: hero.position ?? "center" }}
+            className={`aspect-square w-full ${
+              hero.contain ? "object-contain p-8" : "object-cover"
+            }`}
+            style={
+              hero.contain
+                ? undefined
+                : { objectPosition: hero.position ?? "center" }
+            }
             sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw"
           />
         </Link>

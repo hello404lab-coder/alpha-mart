@@ -17,8 +17,14 @@ export function ProductGallery({ images }: { images: ProductImage[] }) {
           width={1600}
           height={900}
           priority
-          className="aspect-[4/5] w-full object-cover md:aspect-square"
-          style={{ objectPosition: current.position ?? "center" }}
+          className={`aspect-[4/5] w-full md:aspect-square ${
+            current.contain ? "object-contain p-10" : "object-cover"
+          }`}
+          style={
+            current.contain
+              ? undefined
+              : { objectPosition: current.position ?? "center" }
+          }
           sizes="(min-width: 1024px) 50vw, 92vw"
         />
       </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { addToEnquire, useInEnquire } from "@/lib/enquire";
 import {
   categoryLabel,
@@ -71,14 +70,6 @@ export function BuyColumn({ product }: { product: Product }) {
           {listed ? "On your list" : "Add to list"}
         </Button>
       </div>
-      {product.sequenceHref ? (
-        <Link
-          href={product.sequenceHref}
-          className="mt-6 inline-block text-[13px] tracking-[0.02em] text-ink/50 hover:text-river"
-        >
-          Watch it assembled →
-        </Link>
-      ) : null}
       <dl className="mt-12 border-t border-ink/10">
         {[
           ["Dimensions", product.dimensions],

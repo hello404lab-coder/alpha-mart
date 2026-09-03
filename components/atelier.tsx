@@ -9,7 +9,7 @@ import { getProduct } from "@/lib/products";
 import { Button } from "./ui/button";
 
 const field =
-  "w-full rounded-none border-0 border-b border-ink/15 bg-transparent px-0 py-3 text-[15px] text-ink placeholder:text-ink/30 outline-none transition-colors focus:border-river";
+  "w-full rounded-none border-0 border-b border-ink/15 bg-transparent px-0 py-3 text-[15px] text-ink placeholder:text-ink/30 outline-none focus:border-ink";
 
 export function Atelier() {
   const [sent, setSent] = useState(false);
@@ -43,7 +43,7 @@ export function Atelier() {
   };
 
   return (
-    <section id="atelier" className="bg-cream py-24 md:py-32">
+    <section id="atelier" className="bg-paper py-20 md:py-28">
       <div className="page-wrap grid gap-14 lg:grid-cols-12 lg:gap-20">
         <div className="lg:col-span-5">
           <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-ink/40">
@@ -60,13 +60,13 @@ export function Atelier() {
             {BRAND.address}
           </p>
           <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-ink/50">
-            <a href={BRAND.maps} target="_blank" rel="noreferrer" className="hover:text-river">
+            <a href={BRAND.maps} target="_blank" rel="noreferrer" className="hover:text-ink">
               Maps →
             </a>
-            <a href={BRAND.instagram} target="_blank" rel="noreferrer" className="hover:text-river">
+            <a href={BRAND.instagram} target="_blank" rel="noreferrer" className="hover:text-ink">
               {BRAND.instagramHandle}
             </a>
-            <a href={`mailto:${BRAND.email}`} className="hover:text-river">
+            <a href={`mailto:${BRAND.email}`} className="hover:text-ink">
               {BRAND.email}
             </a>
           </div>

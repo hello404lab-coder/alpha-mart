@@ -1,16 +1,30 @@
 import Link from "next/link";
 import { BrandMark } from "./brand-mark";
-import { NAV } from "@/lib/copy";
+import { NAV, VISIT } from "@/lib/copy";
 import { BRAND, MAILTO, TEL } from "@/lib/brand";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-sand">
-      <div className="page-wrap grid gap-12 py-16 md:grid-cols-12 md:gap-10">
+    <footer className="bg-paper">
+      <div
+        id="visit"
+        className="page-wrap border-t border-ink/10 py-14 md:py-16"
+      >
+        <p className="font-display text-[1.65rem] tracking-[-0.03em] text-ink">
+          {VISIT.title}
+        </p>
+        <p className="mt-4 max-w-[38em] text-[14px] leading-[1.7] text-ink/55">
+          {VISIT.body}
+        </p>
+        <p className="mt-4 font-mono text-[11px] tracking-[0.04em] text-ink/35">
+          GSTIN {BRAND.gstin}
+        </p>
+      </div>
+      <div className="page-wrap grid gap-12 border-t border-ink/10 py-14 md:grid-cols-12 md:gap-10 md:py-16">
         <div className="md:col-span-5">
           <Link href="/" className="inline-flex items-center gap-3">
-            <BrandMark className="h-12 w-auto" />
-            <span className="font-display text-[1.35rem] tracking-[-0.03em] text-ink/90">
+            <BrandMark className="h-10 w-auto" />
+            <span className="font-display text-[1.25rem] tracking-[-0.03em] text-ink/90">
               {BRAND.name}
             </span>
           </Link>
@@ -21,13 +35,10 @@ export function SiteFooter() {
             href={BRAND.maps}
             target="_blank"
             rel="noreferrer"
-            className="mt-6 block max-w-[22em] text-[13px] leading-relaxed text-ink/55 hover:text-river"
+            className="mt-6 block max-w-[22em] text-[13px] leading-relaxed text-ink/55 hover:text-ink"
           >
             {BRAND.address}
           </a>
-          <p className="mt-4 font-mono text-[11px] tracking-[0.04em] text-ink/35">
-            GSTIN {BRAND.gstin}
-          </p>
         </div>
         <div className="md:col-span-3">
           <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-ink/40">
@@ -35,12 +46,12 @@ export function SiteFooter() {
           </p>
           <ul className="mt-4 flex flex-col gap-3 text-[13px] tracking-[0.02em] text-ink/55">
             <li>
-              <a href={MAILTO} className="hover:text-river">
+              <a href={MAILTO} className="hover:text-ink">
                 {BRAND.email}
               </a>
             </li>
             <li>
-              <a href={TEL} className="hover:text-river">
+              <a href={TEL} className="hover:text-ink">
                 {BRAND.phoneDisplay}
               </a>
             </li>
@@ -49,7 +60,7 @@ export function SiteFooter() {
                 href={BRAND.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-river"
+                className="hover:text-ink"
               >
                 {BRAND.instagramHandle}
               </a>
@@ -59,7 +70,7 @@ export function SiteFooter() {
                 href={BRAND.maps}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-river"
+                className="hover:text-ink"
               >
                 Google Maps →
               </a>
@@ -73,7 +84,7 @@ export function SiteFooter() {
           <ul className="mt-4 flex flex-col gap-3 text-[13px] tracking-[0.02em] text-ink/55 md:items-end">
             {NAV.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="hover:text-river">
+                <Link href={item.href} className="hover:text-ink">
                   {item.label}
                 </Link>
               </li>
