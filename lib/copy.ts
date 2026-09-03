@@ -5,11 +5,10 @@ export const NAV = [
   { href: "/#visit", label: "Payment&Delivery" },
 ] as const;
 
-export const HERO_CHAIR =
-  "/lounge-chair-chair-object-embassy-5747870-Photoroom.png";
+export const HERO_CHAIR = "/stills/cane-lounge.webp";
 
 export const HERO = {
-  wordmark: "Alpha",
+  wordmark: "curated",
   tagline: "furniture atelier",
   manifesto:
     "Bespoke furniture made for interiors that value quality, texture, and thoughtful design. From concept to final detail — every piece is built to last and made to be lived with.",
@@ -136,7 +135,7 @@ export const MATERIALS = {
     {
       name: "Walnut",
       body: "Dark grain, oiled, for frames that take the hand every day.",
-      src: "/lounge-chair-chair-object-embassy-5747870-Photoroom.png",
+      src: HERO_CHAIR,
       alt: "Solid walnut on the cane lounge",
       contain: true,
     },

@@ -7,9 +7,10 @@ export function HomeHero() {
     <section className="relative overflow-hidden bg-paper">
       <div className="page-wrap relative pb-10 pt-2 md:min-h-[720px] md:pb-14 md:pt-1 lg:min-h-[760px]">
         <div className="relative z-0">
-          <h1 className="font-display text-[4.5rem] font-light leading-[0.76] tracking-[-0.05em] text-ink sm:text-[6.5rem] md:text-[clamp(10rem,22vw,18rem)] text-center">
+          <h1 className="font-display text-[4.5rem] font-light leading-[0.76] tracking-[-0.05em] text-ink sm:text-[6.5rem] md:text-[clamp(10rem,22vw,16rem)] text-center">
             {HERO.wordmark}
-            <span className="font-bold"> Mart</span>
+            <span className="font-bold text-[0.5rem]">by</span>
+            <span className="font-bold"> alpha</span>
           </h1>
           <p className="relative z-20 mt-3 font-semibold text-[15px] tracking-[-0.03em] text-ink md:absolute md:right-0 md:bottom-[-2.12em] md:mt-0 md:text-[20px]">
             {HERO.tagline}
@@ -18,11 +19,12 @@ export function HomeHero() {
 
         <div className="pointer-events-none relative z-[15] mx-auto mt-2 w-[min(88%,300px)] md:absolute md:left-[24%] md:top-[4%] md:mx-0 md:mt-0 md:w-[min(54%,600px)] lg:left-[26%] lg:w-[560px]">
           <Image
-            src="/stills/hero-chair.png"
+            src="/stills/hero-chair.webp"
             alt="Cane lounge in solid walnut"
-            width={1358}
-            height={1506}
+            width={1082}
+            height={1200}
             priority
+            quality={80}
             className="h-auto w-full max-w-full"
             sizes="(min-width: 1024px) 580px, 80vw"
           />
@@ -55,6 +57,7 @@ export function HomeHero() {
                     fill
                     className="object-cover"
                     sizes="132px"
+                    quality={70}
                   />
                   <span className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <span className="absolute inset-x-2.5 bottom-2.5 text-[12px] leading-tight text-paper">

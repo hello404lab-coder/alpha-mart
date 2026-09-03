@@ -25,6 +25,7 @@ function Frame({
         className={`h-full w-full ${contain ? "object-contain p-8" : "object-cover"}`}
         style={contain ? undefined : { objectPosition: position ?? "center" }}
         sizes="(min-width: 768px) 50vw, 92vw"
+        quality={70}
       />
     </div>
   );

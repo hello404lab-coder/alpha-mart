@@ -19,6 +19,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://curatedbyalpha.com"),
   title: {
     default: "Curated by Alpha",
     template: "%s — Curated by Alpha",
@@ -39,7 +40,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-cream text-ink font-sans">
+      <body
+        className="min-h-full flex flex-col bg-cream text-ink font-sans"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>

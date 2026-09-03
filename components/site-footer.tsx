@@ -22,11 +22,8 @@ export function SiteFooter() {
       </div>
       <div className="page-wrap grid gap-12 border-t border-ink/10 py-14 md:grid-cols-12 md:gap-10 md:py-16">
         <div className="md:col-span-5">
-          <Link href="/" className="inline-flex items-center gap-3">
-            <BrandMark className="h-10 w-auto" />
-            <span className="font-display text-[1.25rem] tracking-[-0.03em] text-ink/90">
-              {BRAND.name}
-            </span>
+          <Link href="/" className="inline-flex items-center">
+            <BrandMark className="h-14 w-auto md:h-16" />
           </Link>
           <p className="mt-3 text-[13px] tracking-[0.04em] text-ink/45">
             {BRAND.tagline}

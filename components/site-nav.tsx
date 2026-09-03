@@ -61,7 +61,7 @@ export function SiteNav({ solid = false }: { solid?: boolean }) {
           className="flex shrink-0 items-center"
           aria-label={`${BRAND.name}, home`}
         >
-          <BrandMark className="h-8 w-auto md:h-9" priority />
+          <BrandMark className="h-11 w-auto md:h-14" priority />
         </Link>
         <ul className="hidden flex-1 items-center justify-center gap-10 text-[13px] tracking-[0.01em] text-ink/50 md:flex">
           {NAV.map((item) => {

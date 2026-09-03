@@ -103,7 +103,7 @@ export const PRODUCTS: Product[] = [
     ],
     images: [
       {
-        src: "/stills/room-dressed.jpg",
+        src: "/stills/room-lounge.jpg",
         alt: "Oak Bed in the assembled Alpha room",
         position: "52% 80%",
       },
@@ -149,7 +149,7 @@ export const PRODUCTS: Product[] = [
         position: "16% 62%",
       },
       {
-        src: "/stills/room-dressed.jpg",
+        src: "/stills/room-lounge.jpg",
         alt: "Linen Lounge in the finished Alpha room",
         position: "12% 70%",
       },
@@ -256,7 +256,7 @@ export const PRODUCTS: Product[] = [
     chips: ["atelier"],
     images: [
       {
-        src: "/stills/room-dressed.jpg",
+        src: "/stills/room-lounge.jpg",
         alt: "Disc Mirror above the oak bed",
         position: "50% 18%",
       },
