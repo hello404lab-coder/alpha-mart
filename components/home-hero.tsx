@@ -7,11 +7,11 @@ export function HomeHero() {
     <section className="relative overflow-hidden bg-paper">
       <div className="page-wrap relative pb-10 pt-2 md:min-h-[720px] md:pb-14 md:pt-1 lg:min-h-[760px]">
         <div className="relative z-0">
-          <h1 className="font-display text-[4.5rem] font-semibold leading-[0.76] tracking-[-0.07em] text-ink sm:text-[6.5rem] md:text-[clamp(10rem,22vw,18rem)] text-center">
+          <h1 className="font-display text-[4.5rem] font-light leading-[0.76] tracking-[-0.05em] text-ink sm:text-[6.5rem] md:text-[clamp(10rem,22vw,18rem)] text-center">
             {HERO.wordmark}
-            <span> mart</span>
+            <span className="font-bold"> Mart</span>
           </h1>
-          <p className="relative z-20 mt-3 text-[15px] tracking-[-0.03em] text-ink md:absolute md:right-0 md:bottom-[-2.12em] md:mt-0 md:text-[20px]">
+          <p className="relative z-20 mt-3 font-semibold text-[15px] tracking-[-0.03em] text-ink md:absolute md:right-0 md:bottom-[-2.12em] md:mt-0 md:text-[20px]">
             {HERO.tagline}
           </p>
         </div>
